@@ -1,0 +1,25 @@
+<%- include("partials/header") %>
+<div class = "ui main text container segment" style = "margin-top : 7em">
+    <div class = "ui huge header">Edit <%= blog.title %></div>
+    <form class = "ui form" action = "/blogs/<%=blog._id%>?_method=PUT" method = "POST"> <!--A cheat code for PUT req-->
+        <div class = "field">
+            <lebel>Title</lebel>
+            <input type = "text" name = "blog[title]" value = <%= blog.title %>>
+        </div> 
+        
+        <div class = "field">
+            <lebel>Image</lebel>
+            <input type = "text" name = "blog[image]" value = <%= blog.image %>>
+        </div>
+        
+         <div class = "field">
+            <lebel>Blog Content</lebel>
+            <textarea name = "blog[body]" ><%= blog.body %></textarea>
+        </div>
+        
+        
+         
+        <input class = "ui blue big inverted button" type = "submit">
+    </form>
+</div>
+<%- include("partials/footer") %>
